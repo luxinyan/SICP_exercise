@@ -1,4 +1,6 @@
 (define (sqrt-iter guess x)
+  (display guess)
+  (newline)
   (if (good-enough? guess x)
       guess
       (sqrt-iter (improve guess x)
@@ -27,4 +29,4 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(sqrt 4)
+(sqrt 100)
