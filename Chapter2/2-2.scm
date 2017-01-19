@@ -8,8 +8,8 @@
   (cdr point))
 
 
-(define (make-segment start end) 
-  (cons start end))
+(define (make-segment a b) 
+  (cons a b))
 
 (define (start-segment segment)
   (car segment))
@@ -17,20 +17,16 @@
 (define (end-segment segment)
   (cdr segment))
 
+(define (average a b)
+  (/ (+ a b)
+     2))
+
 (define (midpoint-segment segment)
-  (let ((start-point (start-segment segment))
-        (end-point (end-segment segment))
-        (start-x (x-point start-point))
-        (start-y (y-point start-point))
-        (end-x (x-point end-point))
-        (end-y (y-point end-point))
-        (mid-x (\ (+ start-x end-x)
-                  2))
-        (mid-y (\ (+ start-y end-y)
-                  2))
-        )
-      (make-point mid-x mid-y))
-  )
+  (let ((a (start-segment segment))
+        (b (end-segment segment)))
+    (make-point (average (x-point a) (x-point b))
+                (average (y-point a) (y-point b)))))
+
 
 (define (print-point p)
   (newline)
@@ -42,13 +38,8 @@
 
 (define (test)
   (let ((segment (make-segment (make-point 1 1)
-                                 (make-point 2 2)))
-        (mid-point (midpoint-segment segment)))
-      (print-point mid-point)))
+                               (make-point 3 3))))
+      (print-point (midpoint-segment segment))))
+
 
 (test)
-;(make-segment (make-point 1 1) (make-point 1 1))`
-;(print-point (make-segment 1 (make-point 1 1)))
-
-
-
