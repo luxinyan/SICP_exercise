@@ -7,4 +7,9 @@
       0
       y))
 
-(test 0 (p))
+;(test 0 (p))
+
+(define (f g)
+  (` 2))
+
+(f square)
