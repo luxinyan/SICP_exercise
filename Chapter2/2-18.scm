@@ -1,3 +1,4 @@
+#lang sicp
 (define (append list1 list2)   
   (if (null? list1)
       list2
@@ -11,3 +12,6 @@
               (list (car items)))))
 
 (reverse (list 1 2 3))
+
+(list 1 2 3)
+(cons 1 2)
