@@ -1,3 +1,5 @@
+#lang sicp
+
 (define x (list (list 1 2) (list 3 4)))
 
 (define (deep-reverse items)
@@ -8,4 +10,4 @@
                     (deep-reverse (car items)) 
                     (car items))))))
 
-(deep-reverse x)
+(display (deep-reverse x))

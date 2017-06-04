@@ -1,3 +1,5 @@
+#lang sicp
+
 (define x (list (list 1 3) (list 3 4) 5))
 
 (define (fringe items)
@@ -7,6 +9,6 @@
           (append (fringe (car items))
                   (fringe (cdr items))))))
 
-(fringe x)
-
-(fringe (list x x))
+(display (fringe x))
+(newline)
+(display (fringe (list x x)))
